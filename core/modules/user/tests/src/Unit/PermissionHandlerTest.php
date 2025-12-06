@@ -61,7 +61,7 @@ class PermissionHandlerTest extends UnitTestCase {
     parent::setUp();
 
     $this->stringTranslation = new TestTranslationManager();
-    $this->callableResolver = $this->createMock('Drupal\Core\Utility\CallableResolver');
+    $this->callableResolver = $this->createStub('Drupal\Core\Utility\CallableResolver');
   }
 
   /**

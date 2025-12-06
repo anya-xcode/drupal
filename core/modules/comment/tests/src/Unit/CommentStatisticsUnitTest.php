@@ -91,7 +91,7 @@ class CommentStatisticsUnitTest extends UnitTestCase {
       ->method('select')
       ->willReturn($this->select);
 
-    $this->commentStatistics = new CommentStatistics($this->database, $this->createMock('Drupal\Core\Session\AccountInterface'), $this->createMock(EntityTypeManagerInterface::class), $this->createMock('Drupal\Core\State\StateInterface'), $this->createMock(TimeInterface::class), $this->database);
+    $this->commentStatistics = new CommentStatistics($this->database, $this->createStub('Drupal\Core\Session\AccountInterface'), $this->createStub(EntityTypeManagerInterface::class), $this->createStub('Drupal\Core\State\StateInterface'), $this->createStub(TimeInterface::class), $this->database);
   }
 
   /**

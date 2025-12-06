@@ -96,13 +96,13 @@ class BlockFormTest extends UnitTestCase {
   protected function setUp(): void {
     parent::setUp();
 
-    $this->conditionManager = $this->createMock('Drupal\Core\Executable\ExecutableManagerInterface');
-    $this->language = $this->createMock('Drupal\Core\Language\LanguageManagerInterface');
-    $this->contextRepository = $this->createMock('Drupal\Core\Plugin\Context\ContextRepositoryInterface');
+    $this->conditionManager = $this->createStub('Drupal\Core\Executable\ExecutableManagerInterface');
+    $this->language = $this->createStub('Drupal\Core\Language\LanguageManagerInterface');
+    $this->contextRepository = $this->createStub('Drupal\Core\Plugin\Context\ContextRepositoryInterface');
 
     $this->entityTypeManager = $this->createMock('Drupal\Core\Entity\EntityTypeManagerInterface');
-    $this->storage = $this->createMock('Drupal\Core\Config\Entity\ConfigEntityStorageInterface');
-    $this->themeHandler = $this->createMock('Drupal\Core\Extension\ThemeHandlerInterface');
+    $this->storage = $this->createStub('Drupal\Core\Config\Entity\ConfigEntityStorageInterface');
+    $this->themeHandler = $this->createStub('Drupal\Core\Extension\ThemeHandlerInterface');
     $this->entityTypeManager->expects($this->any())
       ->method('getStorage')
       ->willReturn($this->storage);

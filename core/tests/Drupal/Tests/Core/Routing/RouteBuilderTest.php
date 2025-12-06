@@ -89,11 +89,11 @@ class RouteBuilderTest extends UnitTestCase {
     $this->dispatcher = $this->prophesize('\Symfony\Contracts\EventDispatcher\EventDispatcherInterface');
     $this->dispatcher->dispatch(Argument::cetera(), Argument::cetera())->willReturnArgument(0);
     $this->moduleHandler = $this->createMock('Drupal\Core\Extension\ModuleHandlerInterface');
-    $this->controllerResolver = $this->createMock('Drupal\Core\Controller\ControllerResolverInterface');
+    $this->controllerResolver = $this->createStub('Drupal\Core\Controller\ControllerResolverInterface');
     $this->yamlDiscovery = $this->getMockBuilder('\Drupal\Core\Discovery\YamlDiscovery')
       ->disableOriginalConstructor()
       ->getMock();
-    $this->checkProvider = $this->createMock('\Drupal\Core\Access\CheckProviderInterface');
+    $this->checkProvider = $this->createStub('\Drupal\Core\Access\CheckProviderInterface');
 
     $this->routeBuilder = new TestRouteBuilder($this->dumper, $this->lock, $this->dispatcher->reveal(), $this->moduleHandler, $this->controllerResolver, $this->checkProvider);
     $this->routeBuilder->setYamlDiscovery($this->yamlDiscovery);

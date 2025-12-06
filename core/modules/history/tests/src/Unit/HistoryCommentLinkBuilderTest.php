@@ -84,10 +84,10 @@ class HistoryCommentLinkBuilderTest extends UnitTestCase {
 
     $this->commentManager = $this->createMock('\Drupal\comment\CommentManagerInterface');
     $this->stringTranslation = $this->getStringTranslationStub();
-    $this->entityTypeManager = $this->createMock(EntityTypeManagerInterface::class);
+    $this->entityTypeManager = $this->createStub(EntityTypeManagerInterface::class);
     $this->currentUser = $this->createMock('\Drupal\Core\Session\AccountProxyInterface');
     $this->commentLinkBuilder = new CommentLinkBuilder($this->currentUser, $this->commentManager, $this->stringTranslation);
-    $this->decoratedCommentLinkBuilder = new HistoryCommentLinkBuilder($this->commentLinkBuilder, $this->commentManager, $this->currentUser, $this->entityTypeManager, $this->createMock(HistoryManager::class));
+    $this->decoratedCommentLinkBuilder = new HistoryCommentLinkBuilder($this->commentLinkBuilder, $this->commentManager, $this->currentUser, $this->entityTypeManager, $this->createStub(HistoryManager::class));
     $this->commentManager->expects($this->any())
       ->method('getFields')
       ->with('node')

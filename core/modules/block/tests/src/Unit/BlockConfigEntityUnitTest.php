@@ -82,7 +82,7 @@ class BlockConfigEntityUnitTest extends UnitTestCase {
       ->with($this->entityTypeId)
       ->willReturn($this->entityType);
 
-    $this->uuid = $this->createMock('\Drupal\Component\Uuid\UuidInterface');
+    $this->uuid = $this->createStub('\Drupal\Component\Uuid\UuidInterface');
 
     $this->moduleHandler = $this->prophesize(ModuleHandlerInterface::class);
     $this->themeHandler = $this->prophesize(ThemeHandlerInterface::class);

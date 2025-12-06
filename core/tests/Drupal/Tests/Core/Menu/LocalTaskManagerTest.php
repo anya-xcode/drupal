@@ -104,15 +104,15 @@ class LocalTaskManagerTest extends UnitTestCase {
   protected function setUp(): void {
     parent::setUp();
 
-    $this->argumentResolver = $this->createMock('Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface');
+    $this->argumentResolver = $this->createStub('Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface');
     $this->request = new Request();
     $this->routeProvider = $this->createMock('Drupal\Core\Routing\RouteProviderInterface');
-    $this->pluginDiscovery = $this->createMock('Drupal\Component\Plugin\Discovery\DiscoveryInterface');
+    $this->pluginDiscovery = $this->createStub('Drupal\Component\Plugin\Discovery\DiscoveryInterface');
     $this->factory = $this->createMock('Drupal\Component\Plugin\Factory\FactoryInterface');
     $this->cacheBackend = $this->prophesize('Drupal\Core\Cache\CacheBackendInterface');
     $this->accessManager = $this->createMock('Drupal\Core\Access\AccessManagerInterface');
     $this->routeMatch = $this->createMock('Drupal\Core\Routing\RouteMatchInterface');
-    $this->account = $this->createMock('Drupal\Core\Session\AccountInterface');
+    $this->account = $this->createStub('Drupal\Core\Session\AccountInterface');
 
     $this->setupLocalTaskManager();
     $this->setupNullCacheabilityMetadataValidation();

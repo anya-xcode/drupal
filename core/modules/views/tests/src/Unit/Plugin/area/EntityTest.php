@@ -91,8 +91,8 @@ class EntityTest extends UnitTestCase {
     parent::setUp();
 
     $this->entityTypeManager = $this->createMock(EntityTypeManagerInterface::class);
-    $this->entityRepository = $this->createMock(EntityRepositoryInterface::class);
-    $this->entityDisplayRepository = $this->createMock(EntityDisplayRepositoryInterface::class);
+    $this->entityRepository = $this->createStub(EntityRepositoryInterface::class);
+    $this->entityDisplayRepository = $this->createStub(EntityDisplayRepositoryInterface::class);
     $this->entityStorage = $this->createMock('Drupal\Core\Entity\EntityStorageInterface');
     $this->entityViewBuilder = $this->createMock('Drupal\Core\Entity\EntityViewBuilderInterface');
 

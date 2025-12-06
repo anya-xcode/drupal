@@ -80,7 +80,7 @@ class EditorConfigEntityUnitTest extends UnitTestCase {
       ->with($this->entityTypeId)
       ->willReturn($this->entityType);
 
-    $this->uuid = $this->createMock('\Drupal\Component\Uuid\UuidInterface');
+    $this->uuid = $this->createStub('\Drupal\Component\Uuid\UuidInterface');
 
     $this->editorPluginManager = $this->getMockBuilder('Drupal\editor\Plugin\EditorManager')
       ->disableOriginalConstructor()

@@ -45,7 +45,7 @@ class PermissionsTest extends UnitTestCase {
    */
   public function testPreRenderNullEntity(): void {
     $values = [new ResultRow()];
-    $field = new Permissions(['entity_type' => 'foo', 'entity field' => 'bar'], '', [], $this->createMock(ModuleHandlerInterface::class), $this->createMock(EntityTypeManagerInterface::class));
+    $field = new Permissions(['entity_type' => 'foo', 'entity field' => 'bar'], '', [], $this->createStub(ModuleHandlerInterface::class), $this->createStub(EntityTypeManagerInterface::class));
     $view = $this->createMock(ViewExecutable::class);
     $display = $this->createMock(DisplayPluginBase::class);
     $field->init($view, $display);

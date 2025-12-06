@@ -25,7 +25,7 @@ class FieldLinkTest extends UnitTestCase {
    */
   #[DataProvider('canonicalizeUriDataProvider')]
   public function testCanonicalizeUri($url, $expected, $configuration = []): void {
-    $link_plugin = new FieldLink($configuration, '', [], $this->createMock(MigrationInterface::class));
+    $link_plugin = new FieldLink($configuration, '', [], $this->createStub(MigrationInterface::class));
     $transformed = $link_plugin->transform([
       'url' => $url,
       'title' => '',
@@ -115,7 +115,7 @@ class FieldLinkTest extends UnitTestCase {
    * Tests the attributes that are deeply serialized are discarded.
    */
   public function testCanonicalizeUriSerialized(): void {
-    $link_plugin = new FieldLink([], '', [], $this->createMock(MigrationInterface::class));
+    $link_plugin = new FieldLink([], '', [], $this->createStub(MigrationInterface::class));
     $migrate_executable = $this->createMock(MigrateExecutableInterface::class);
     $row = new Row();
 

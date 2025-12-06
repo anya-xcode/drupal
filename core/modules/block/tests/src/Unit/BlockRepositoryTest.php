@@ -72,7 +72,7 @@ class BlockRepositoryTest extends UnitTestCase {
       ->method('getActiveTheme')
       ->willReturn($active_theme);
 
-    $this->contextHandler = $this->createMock('Drupal\Core\Plugin\Context\ContextHandlerInterface');
+    $this->contextHandler = $this->createStub('Drupal\Core\Plugin\Context\ContextHandlerInterface');
     $this->blockStorage = $this->createMock('Drupal\Core\Entity\EntityStorageInterface');
     /** @var \Drupal\Core\Entity\EntityTypeManagerInterface|\PHPUnit\Framework\MockObject\MockObject $entity_type_manager */
     $entity_type_manager = $this->createMock(EntityTypeManagerInterface::class);

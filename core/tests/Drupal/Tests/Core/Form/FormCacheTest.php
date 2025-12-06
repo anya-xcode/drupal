@@ -110,9 +110,9 @@ class FormCacheTest extends UnitTestCase {
       ->getMock();
     $this->account = $this->createMock('Drupal\Core\Session\AccountInterface');
 
-    $this->logger = $this->createMock('Psr\Log\LoggerInterface');
-    $this->requestStack = $this->createMock('\Symfony\Component\HttpFoundation\RequestStack');
-    $this->requestPolicy = $this->createMock('\Drupal\Core\PageCache\RequestPolicyInterface');
+    $this->logger = $this->createStub('Psr\Log\LoggerInterface');
+    $this->requestStack = $this->createStub('\Symfony\Component\HttpFoundation\RequestStack');
+    $this->requestPolicy = $this->createStub('\Drupal\Core\PageCache\RequestPolicyInterface');
 
     $this->formCache = new FormCache($this->root, $this->keyValueExpirableFactory, $this->moduleHandler->reveal(), $this->account, $this->csrfToken, $this->logger, $this->requestStack, $this->requestPolicy);
   }

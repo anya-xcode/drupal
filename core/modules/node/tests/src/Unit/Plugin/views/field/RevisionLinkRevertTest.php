@@ -46,7 +46,7 @@ class RevisionLinkRevertTest extends UnitTestCase {
    */
   public function testRenderNullEntity(): void {
     $row = new ResultRow();
-    $field = new RevisionLinkDelete(['entity_type' => 'foo', 'entity field' => 'bar'], '', [], $this->createMock(AccessManagerInterface::class), $this->createMock(EntityTypeManagerInterface::class), $this->createMock(EntityRepositoryInterface::class), $this->createMock(LanguageManagerInterface::class));
+    $field = new RevisionLinkDelete(['entity_type' => 'foo', 'entity field' => 'bar'], '', [], $this->createStub(AccessManagerInterface::class), $this->createStub(EntityTypeManagerInterface::class), $this->createStub(EntityRepositoryInterface::class), $this->createStub(LanguageManagerInterface::class));
     $view = $this->createMock(ViewExecutable::class);
     $display = $this->createMock(DisplayPluginBase::class);
     $field->init($view, $display);

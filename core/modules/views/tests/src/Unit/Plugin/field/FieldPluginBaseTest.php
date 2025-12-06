@@ -179,7 +179,7 @@ class FieldPluginBaseTest extends UnitTestCase {
 
     \Drupal::getContainer()->set('unrouted_url_assembler', $this->unroutedUrlAssembler);
 
-    $this->linkGenerator = new LinkGenerator($this->urlGenerator, $this->createMock('Drupal\Core\Extension\ModuleHandlerInterface'), $this->renderer);
+    $this->linkGenerator = new LinkGenerator($this->urlGenerator, $this->createStub('Drupal\Core\Extension\ModuleHandlerInterface'), $this->renderer);
     $this->renderer
       ->method('render')
       ->willReturnCallback(

@@ -88,7 +88,7 @@ class IFrameUrlHelperTest extends UnitTestCase {
 
     $url_helper = new IFrameUrlHelper(
       $request_context,
-      $this->createMock(PrivateKey::class)
+      $this->createStub(PrivateKey::class)
     );
 
     $this->assertSame($secure, $url_helper->isSecure($url));
